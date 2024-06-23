@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지에서 텍스트 추출하기</title>
+</head>
+<body>
+    <h1>이미지에서 텍스트 추출하기</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="업로드">
+    </form>
+    {% if text %}
+        <h2>추출된 텍스트 ({{ filename }})</h2>
+        <pre>{{ text }}</pre>
+        <img src="{{ url_for('static', filename='uploaded_images/' + filename) }}" alt="업로드된 이미지">
+    {% endif %}
+</body>
+</html>
